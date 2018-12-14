@@ -1,3 +1,4 @@
+@import '~inter-ui/inter-ui.css';
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -61,3 +62,72 @@
   * @import "utilities/skew-transforms";
   */
  
+body {
+    @apply bg-grey-lightest;
+}
+
+.toc-header {
+    @apply relative pl-6 border-l border-grey-lighter;
+}
+
+.toc-header header {
+    @apply flex items-center;
+}
+
+.toc-header header::before {
+    @apply absolute block bg-grey-lighter rounded-full w-3 h-3;
+    content: ' ';
+    left: -0.375rem;
+}
+
+.toc-header.current,
+.toc-header.finished {
+    @apply border-lime-green-light;
+}
+
+.toc-header.current header::before {
+    @apply bg-white shadow;
+}
+
+.toc-header.current header::after {
+    @apply absolute block bg-lime-green-light rounded-full;
+    content: ' ';
+    height: 0.3rem;
+    left: -0.15rem;
+    width: 0.3rem;
+}
+
+.toc-header.finished header::before {
+    @apply bg-lime-green-light;
+}
+
+.toc-page {
+    @apply relative flex items-center border-l border-grey-lighter pl-8 -ml-px;
+}
+
+.toc-page::before {
+    @apply absolute block bg-grey-lighter rounded-full w-2 h-2;
+    content: ' ';
+    left: -0.275rem;
+}
+
+.toc-page.active {
+    @apply border-lime-green-light;
+}
+
+.toc-page.active::before {
+    @apply bg-lime-green-light;
+}
+
+.toc-spacer {
+    @apply pb-6 border-grey-lighter border-l;
+    margin-left: calc(-1.5rem - 1px);
+}
+
+.toc-spacer.finished {
+    @apply border-lime-green-light;
+}
+
+.current-link {
+    @apply text-grey-dark;
+}
