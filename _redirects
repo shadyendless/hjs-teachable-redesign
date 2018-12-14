@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+http://quizzical-wing-ba2551.netlify.com/* http://hjs-teachable.jacob-foster.com/:splat 301!
